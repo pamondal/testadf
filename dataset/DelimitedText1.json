@@ -1,0 +1,89 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "salesourcedl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample-sales-report.csv",
+				"folderPath": "raw",
+				"fileSystem": "source"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Segment",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": " Product ",
+				"type": "String"
+			},
+			{
+				"name": " Discount Band ",
+				"type": "String"
+			},
+			{
+				"name": "Units Sold",
+				"type": "String"
+			},
+			{
+				"name": " Manufacturing Price ",
+				"type": "String"
+			},
+			{
+				"name": " Sale Price ",
+				"type": "String"
+			},
+			{
+				"name": " Gross Sales ",
+				"type": "String"
+			},
+			{
+				"name": " Discounts ",
+				"type": "String"
+			},
+			{
+				"name": "  Sales ",
+				"type": "String"
+			},
+			{
+				"name": " COGS ",
+				"type": "String"
+			},
+			{
+				"name": " Profit ",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Month Number",
+				"type": "String"
+			},
+			{
+				"name": " Month Name ",
+				"type": "String"
+			},
+			{
+				"name": "Year",
+				"type": "String"
+			}
+		]
+	}
+}
