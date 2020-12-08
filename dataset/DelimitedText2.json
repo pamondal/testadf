@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sales_report_refined.csv",
 				"folderPath": "Refined",
 				"fileSystem": "target"
 			},
