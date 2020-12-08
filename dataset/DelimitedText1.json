@@ -2,7 +2,7 @@
 	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "intmSource",
+			"referenceName": "salesourcedl",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "intmSource",
+				"fileName": "sample-sales-report.csv",
+				"folderPath": "raw",
 				"fileSystem": "source"
 			},
 			"columnDelimiter": ",",
