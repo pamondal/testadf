@@ -12,9 +12,17 @@
 					"name": "salesdatasource"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [],
-			"script": "source(output(\n\t\tSegment as string,\n\t\tCountry as string,\n\t\t{ Product } as string,\n\t\t{ Discount Band } as string,\n\t\t{Units Sold} as string,\n\t\t{ Manufacturing Price } as string,\n\t\t{ Sale Price } as string,\n\t\t{ Gross Sales } as string,\n\t\t{ Discounts } as string,\n\t\t{  Sales } as string,\n\t\t{ COGS } as string,\n\t\t{ Profit } as string,\n\t\tDate as string,\n\t\t{Month Number} as string,\n\t\t{ Month Name } as string,\n\t\tYear as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> salesdatasource"
+			"script": "source(output(\n\t\tSegment as string,\n\t\tCountry as string,\n\t\t{ Product } as string,\n\t\t{ Discount Band } as string,\n\t\t{Units Sold} as string,\n\t\t{ Manufacturing Price } as string,\n\t\t{ Sale Price } as string,\n\t\t{ Gross Sales } as string,\n\t\t{ Discounts } as string,\n\t\t{  Sales } as string,\n\t\t{ COGS } as string,\n\t\t{ Profit } as string,\n\t\tDate as string,\n\t\t{Month Number} as string,\n\t\t{ Month Name } as string,\n\t\tYear as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> salesdatasource\nsalesdatasource sink(input(\n\t\tSegment as string,\n\t\tCountry as string,\n\t\t{ Product } as string,\n\t\t{ Discount Band } as string,\n\t\t{Units Sold} as string,\n\t\t{ Manufacturing Price } as string,\n\t\t{ Sale Price } as string,\n\t\t{ Gross Sales } as string,\n\t\t{ Discounts } as string,\n\t\t{  Sales } as string,\n\t\t{ COGS } as string,\n\t\t{ Profit } as string,\n\t\tDate as string,\n\t\t{Month Number} as string,\n\t\t{ Month Name } as string,\n\t\tYear as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
