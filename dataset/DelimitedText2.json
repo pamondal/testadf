@@ -10,8 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "intmSource",
-				"fileSystem": "source"
+				"fileName": "sales_report_refined.csv",
+				"folderPath": "Refined",
+				"fileSystem": "target"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
