@@ -1,7 +1,0 @@
-{
-	"name": "dbsales",
-	"properties": {
-		"concurrency": 2,
-		"annotations": []
-	}
-}
