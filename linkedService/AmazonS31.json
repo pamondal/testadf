@@ -1,0 +1,20 @@
+{
+	"name": "AmazonS31",
+	"properties": {
+		"annotations": [],
+		"type": "AmazonS3",
+		"typeProperties": {
+			"serviceUrl": "http(s)://s3.amazonaws.com/pamondal-first/moviedata/moviesDB.csv",
+			"accessKeyId": "AKIA3C3Y6DN3NDVAITWS",
+			"secretAccessKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AWS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "TD1WVAm9vPxboEswxhmpx4jjLrnUZ+7J6Su3NGgs"
+			},
+			"authenticationType": "AccessKey"
+		}
+	}
+}
