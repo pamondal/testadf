@@ -1,20 +1,14 @@
 {
 	"name": "AmazonS31",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AmazonS3",
 		"typeProperties": {
-			"serviceUrl": "http(s)://s3.amazonaws.com/pamondal-first/moviedata/moviesDB.csv",
+			"serviceUrl": "https://pamondal-first.s3.ap-south-1.amazonaws.com",
 			"accessKeyId": "AKIA3C3Y6DN3NDVAITWS",
-			"secretAccessKey": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "AWS",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "TD1WVAm9vPxboEswxhmpx4jjLrnUZ+7J6Su3NGgs"
-			},
-			"authenticationType": "AccessKey"
+			"authenticationType": "AccessKey",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERlNBTEVTUkVQT1JUXzc0MTI2MzNiLWVmZDgtNDllMy1hOGQyLTQ3MmRiMzI0ZWEzOCINCn0="
 		}
 	}
 }
