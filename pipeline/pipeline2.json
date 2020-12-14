@@ -144,6 +144,9 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/pamondal.temp@gmail.com/reports/Movie"
+				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks3",
 					"type": "LinkedServiceReference"
