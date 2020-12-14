@@ -1,0 +1,10 @@
+{
+	"name": "AWS",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://ppmAccessKey.vault.azure.net/"
+		}
+	}
+}
