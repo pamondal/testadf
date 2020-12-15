@@ -18,9 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AmazonS3ReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
+							"type": "HttpReadSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
