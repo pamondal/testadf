@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/pamondal/moviedata/blob/main/",
+			"url": "https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
