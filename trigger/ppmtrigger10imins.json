@@ -1,0 +1,17 @@
+{
+	"name": "ppmtrigger10imins",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 5,
+				"startTime": "2020-12-15T12:25:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
