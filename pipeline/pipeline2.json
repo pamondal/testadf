@@ -18,8 +18,10 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AmazonS3ReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "moviedata",
+							"wildcardFileName": "*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -49,7 +51,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText7",
 						"type": "DatasetReference"
 					}
 				],
@@ -63,14 +65,7 @@
 			{
 				"name": "CopyRankingData",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "copyMovieData",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -131,6 +126,12 @@
 				"dependsOn": [
 					{
 						"activity": "CopyRankingData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "copyMovieData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
