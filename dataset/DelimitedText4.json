@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText2",
+	"name": "DelimitedText4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SalesReportDL",
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "moviesDB.csv",
-				"folderPath": "raw/source1",
+				"fileName": "movieRank.csv",
+				"folderPath": "raw/source2",
 				"fileSystem": "source"
 			},
 			"columnDelimiter": ",",
@@ -29,19 +29,7 @@
 				"type": "String"
 			},
 			{
-				"name": "genres",
-				"type": "String"
-			},
-			{
-				"name": "year",
-				"type": "String"
-			},
-			{
-				"name": "Rating",
-				"type": "String"
-			},
-			{
-				"name": "Rotton Tomato",
+				"name": "rank",
 				"type": "String"
 			}
 		]

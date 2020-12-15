@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText3",
+	"name": "DelimitedText6",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SalesReportDL",
@@ -15,7 +15,6 @@
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []

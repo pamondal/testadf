@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline2_copy1",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "copyMovieData",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -18,8 +18,8 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -48,28 +48,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "source",
+						"referenceName": "DelimitedText7",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "raw",
+						"referenceName": "DelimitedText5",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "dataflow1",
-				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "Copy data1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"name": "CopyRankingData",
+				"type": "Copy",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -79,23 +72,63 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "dataflow1",
-						"type": "DataFlowReference"
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
 					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
-					"traceLevel": "Fine"
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText4",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText6",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
-				"name": "Notebook2",
+				"name": "MovieReport",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "dataflow1",
+						"activity": "CopyRankingData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "copyMovieData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -110,10 +143,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/pamondal.temp@gmail.com/reports/salesreport"
+					"notebookPath": "/Users/pamondal.temp@gmail.com/reports/Movie"
 				},
 				"linkedServiceName": {
-					"referenceName": "DBReports",
+					"referenceName": "AzureDatabricks3",
 					"type": "LinkedServiceReference"
 				}
 			}

@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText3",
+	"name": "source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SalesReportDL",
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "raw/data",
-				"fileSystem": "target"
+				"fileName": "sample-sales-report.csv",
+				"fileSystem": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

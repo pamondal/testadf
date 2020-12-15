@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText2",
+	"name": "DelimitedText5",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SalesReportDL",
@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "moviesDB.csv",
-				"folderPath": "raw/source1",
-				"fileSystem": "source"
+				"folderPath": "raw/data",
+				"fileSystem": "target"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
