@@ -9,7 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AmazonS3Location"
+				"type": "AmazonS3Location",
+				"bucketName": "pamondal-first",
+				"folderPath": "moviedata",
+				"fileName": "*.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
