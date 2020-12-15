@@ -39,7 +39,7 @@
 			"value": "https://ppmadls.dfs.core.windows.net"
 		},
 		"github_properties_typeProperties_url": {
-			"value": "https://github.com/pamondal/moviedata/blob/main/moviesDB.csv"
+			"value": "https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv"
 		},
 		"intmSource_properties_typeProperties_url": {
 			"value": "https://ppmtestdl.dfs.core.windows.net"

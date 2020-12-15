@@ -53,7 +53,7 @@
 		},
 		"github_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com/pamondal/moviedata/blob/main/moviesDB.csv"
+			"defaultValue": "https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv"
 		},
 		"intmSource_properties_typeProperties_url": {
 			"type": "string",
