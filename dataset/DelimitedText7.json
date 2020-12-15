@@ -2,17 +2,15 @@
 	"name": "DelimitedText7",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AmazonS31",
+			"referenceName": "github",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AmazonS3Location",
-				"bucketName": "pamondal-first",
-				"folderPath": "moviedata",
-				"fileName": "*.csv"
+				"type": "HttpServerLocation",
+				"relativeUrl": "*"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
