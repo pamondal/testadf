@@ -529,7 +529,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Minute",
-						"interval": 15,
+						"interval": 5,
 						"startTime": "2020-12-15T11:15:00",
 						"endTime": "2020-12-15T11:36:00",
 						"timeZone": "India Standard Time"
