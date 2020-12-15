@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfsalesreport"
+		},
+		"AmazonS31_secretAccessKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks3_accessToken": {
+			"value": ""
+		},
+		"DBReports_accessToken": {
+			"value": ""
+		},
+		"SalesReportDL_accountKey": {
+			"value": ""
+		},
+		"intmSource_accountKey": {
+			"value": ""
+		},
+		"salesourcedl_accountKey": {
+			"value": ""
+		},
+		"AWS_properties_typeProperties_baseUrl": {
+			"value": "https://ppmAccessKey.vault.azure.net/"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": "AKIA3C3Y6DN3K6GJB75E"
+		},
+		"SalesReportDL_properties_typeProperties_url": {
+			"value": "https://ppmadls.dfs.core.windows.net"
+		},
+		"github_properties_typeProperties_url": {
+			"value": "https://github.com/pamondal/moviedata/blob/main/moviesDB.csv"
+		},
+		"intmSource_properties_typeProperties_url": {
+			"value": "https://ppmtestdl.dfs.core.windows.net"
+		},
+		"salesourcedl_properties_typeProperties_url": {
+			"value": "https://ppmtestdl.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

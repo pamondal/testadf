@@ -1,0 +1,160 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfsalesreport"
+		},
+		"AmazonS31_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS31'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureDatabricks2_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
+		},
+		"AzureDatabricks3_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks3'"
+		},
+		"DBReports_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'DBReports'"
+		},
+		"SalesReportDL_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'SalesReportDL'"
+		},
+		"intmSource_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'intmSource'"
+		},
+		"salesourcedl_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'salesourcedl'"
+		},
+		"AWS_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ppmAccessKey.vault.azure.net/"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "AKIA3C3Y6DN3K6GJB75E"
+		},
+		"SalesReportDL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ppmadls.dfs.core.windows.net"
+		},
+		"github_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/pamondal/moviedata/blob/main/moviesDB.csv"
+		},
+		"intmSource_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ppmtestdl.dfs.core.windows.net"
+		},
+		"salesourcedl_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ppmtestdl.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfsalesreport_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AmazonS31_secretAccessKey": {
+						"value": "[parameters('AmazonS31_secretAccessKey')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureDatabricks2_accessToken": {
+						"value": "[parameters('AzureDatabricks2_accessToken')]"
+					},
+					"AzureDatabricks3_accessToken": {
+						"value": "[parameters('AzureDatabricks3_accessToken')]"
+					},
+					"DBReports_accessToken": {
+						"value": "[parameters('DBReports_accessToken')]"
+					},
+					"SalesReportDL_accountKey": {
+						"value": "[parameters('SalesReportDL_accountKey')]"
+					},
+					"intmSource_accountKey": {
+						"value": "[parameters('intmSource_accountKey')]"
+					},
+					"salesourcedl_accountKey": {
+						"value": "[parameters('salesourcedl_accountKey')]"
+					},
+					"AWS_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AWS_properties_typeProperties_baseUrl')]"
+					},
+					"AmazonS31_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
+					},
+					"SalesReportDL_properties_typeProperties_url": {
+						"value": "[parameters('SalesReportDL_properties_typeProperties_url')]"
+					},
+					"github_properties_typeProperties_url": {
+						"value": "[parameters('github_properties_typeProperties_url')]"
+					},
+					"intmSource_properties_typeProperties_url": {
+						"value": "[parameters('intmSource_properties_typeProperties_url')]"
+					},
+					"salesourcedl_properties_typeProperties_url": {
+						"value": "[parameters('salesourcedl_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfsalesreport_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfsalesreport_ArmTemplate_0')]"
+			]
+		}
+	]
+}
